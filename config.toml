@@ -1,0 +1,63 @@
+baseURL = 'http://localhost'
+homepage = "https://lowk.me"
+
+name = "LowK"
+title = "LowK"
+description = "LowK - Blockchain security auditor"
+
+theme = "chringel-hugo-theme"
+# https://github.com/chringel21/chringel-hugo-theme
+
+languageCode = "en-us"
+license = "MIT"
+
+tags = ["Blog", "Blockchain", "Smart Contracts", "Security", "Auditor"]
+features = ["Isso comments", "umami analytics", "SVG icons", "automatic dark mode", "deeplinks"]
+
+paginate = 10
+enableEmoji = true
+
+[author]
+  name = "LowK"
+  homepage = "https://lowk.me"
+
+[original]
+  author = "Dirk Olbrich"
+  homepage = "https://github.com/dirkolbrich"
+  repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min_version = "0.69"
+
+[Params]
+  headerTitle = 'lowk@dev: ~/$'
+  name = "LowK"
+  footerCopyrightText = 'LowK 2023'
+
+# microformat2 h-card configuration
+# All params except 'fullName' are optional
+[Params.hcard]
+  avatar = ""
+  fullName = "Dat Lam Phat"
+  pronouns = [ "he", "him" ]
+  nickname = "LowK"
+  showLocation = true
+  city = "Ho Chi Minh city"
+  region = "district 7"
+  country = "Viet Nam"
+
+# Social icons to be displayed on the front page
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/lowk3v"
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/lowk3v_"
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
