@@ -1,5 +1,5 @@
 baseURL = 'https://lowk.me'
-homepage = "https://lowk.me"
+#baseURL = 'localhost'
 
 name = "LowK"
 title = "LowK"
@@ -19,12 +19,6 @@ enableEmoji = true
 
 [author]
   name = "LowK"
-  homepage = "https://lowk.me"
-
-[original]
-  author = "Dirk Olbrich"
-  homepage = "https://github.com/dirkolbrich"
-  repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
 
 [module]
   [module.hugoVersion]
