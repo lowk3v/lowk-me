@@ -10,7 +10,7 @@ cover:
   src: "img/cover.png"
 ---
 
-[Tenderfi](https://www.tender.fi/) is a project that is built on top of the Uniswap protocol. It is a decentralized lending protocol that allows users to borrow and lend assets on the Ethereum blockchain. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool.
+[Tenderfi](https://www.tender.fi/) is a project that is built on top of the Uniswap protocol. It is a decentralized lending protocol that allows users to borrow and lend assets on the Ethereum blockchain. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool.
 
 March 7th, 2023, the Twitter's Tenderfi was post a notification that the project was paused all borrowing. The reason for the pause was that the project team investigated the vulnerability of the project. The project team said that the vulnerability was found by a hacker and the hacker had exploited the vulnerability to steal 1.59 million USDT from the project. 
 

@@ -7,4 +7,4 @@ resource:
 	hugo new resource/`date +'%Y%m%d-'$(name)`.md
 
 run:
-	hugo server
+	hugo server -b http://local.lowk.me

@@ -6,12 +6,12 @@
   />
   <title>
     {{ block "title" . }}
-      {{ if .Title }}
-        {{- .Title }} -
+    {{ .Site.Params.Description }} -
+    {{ if .Title }}
+        {{- .Title }}
       {{ else }}
-        {{ .Type | humanize }} -
+        {{ .Type | humanize }}
       {{ end }}
-      {{ .Site.Title -}}
     {{ end }}
   </title>
   {{- if .Description -}}

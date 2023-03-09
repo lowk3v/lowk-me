@@ -3,7 +3,6 @@ baseURL = 'https://lowk.me'
 
 name = "LowK"
 title = "LowK"
-description = "LowK - Blockchain security auditor"
 
 theme = "chringel-hugo-theme"
 # https://github.com/chringel21/chringel-hugo-theme
@@ -33,6 +32,7 @@ googleAnalytics = 'G-JDNP5HFPQ2'
 [Params]
   headerTitle = 'lowk@dev: ~/$'
   name = "LowK"
+  description = "Blockchain security auditor"
   footerCopyrightText = 'LowK 2023'
 
 # for others mention me
