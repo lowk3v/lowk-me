@@ -25,6 +25,9 @@ enableEmoji = true
     extended = true
     min_version = "0.69"
 
+disqusShortname = 'lowk'
+googleAnalytics = 'G-JDNP5HFPQ2'
+
 [Params]
   headerTitle = 'lowk@dev: ~/$'
   name = "LowK"
