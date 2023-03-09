@@ -1,5 +1,5 @@
 <div
-  class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
+  class="px-6 mx-auto mb-16 text-sm prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
 >
   {{/* h-entry */}}
   <article class="h-entry">
@@ -12,7 +12,7 @@
       </span>
     </div>
     {{ with .Params.cover }}
-      {{ $caption := .caption | default $.Page.Title }}
+      {{ $caption := .caption | default "" }}
       {{ partial "image.html" (dict "Page" $.Page "Destination" .src "Title" $caption) }}
     {{ end }}
     {{- if .Params.series -}}

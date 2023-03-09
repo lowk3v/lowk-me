@@ -17,6 +17,11 @@ features = ["Isso comments", "umami analytics", "SVG icons", "automatic dark mod
 paginate = 10
 enableEmoji = true
 
+# Third party
+disqusShortname = 'lowk'
+
+googleAnalytics = 'G-JDNP5HFPQ2'
+
 [author]
   name = "LowK"
 
@@ -25,13 +30,16 @@ enableEmoji = true
     extended = true
     min_version = "0.69"
 
-disqusShortname = 'lowk'
-googleAnalytics = 'G-JDNP5HFPQ2'
-
 [Params]
   headerTitle = 'lowk@dev: ~/$'
   name = "LowK"
   footerCopyrightText = 'LowK 2023'
+
+# for others mention me
+[Params.webmentions]
+  webmentionUrl = "https://webmention.io"
+  webmentionEndpoint = "/webmention"
+  webmentionPingbackEndpoint = "/xmlrcp"
 
 # microformat2 h-card configuration
 # All params except 'fullName' are optional

@@ -3,9 +3,11 @@ title: "Tenderfi post-mortem"
 date: 2023-03-08T16:27:04+07:00
 draft: false
 author: LowK
+categories: ["post-mortem"]
+tags: ["smart contracts", "hacking", "solidity"]
+type: post
 cover:
   src: "img/cover.png"
-  caption: Tenderfi post-mortem
 ---
 
 [Tenderfi](https://www.tender.fi/) is a project that is built on top of the Uniswap protocol. It is a decentralized lending protocol that allows users to borrow and lend assets on the Ethereum blockchain. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool. The protocol is built on top of the Uniswap protocol and uses the Uniswap AMM to provide liquidity for the lending pool.
