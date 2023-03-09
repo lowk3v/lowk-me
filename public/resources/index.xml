@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on LowK</title>
+    <link>https://lowk.me/resources/</link>
+    <description>Recent content in Resources on LowK</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Mar 2023 16:29:22 +0700</lastBuildDate><atom:link href="https://lowk.me/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smart Contracts Hacking Resources</title>
+      <link>https://lowk.me/resources/20230308-hacking-resources/</link>
+      <pubDate>Wed, 08 Mar 2023 16:29:22 +0700</pubDate>
+      
+      <guid>https://lowk.me/resources/20230308-hacking-resources/</guid>
+      <description>I collected some resources that I found useful for developing and hacking. I will update that post on Notion as I find more resources. Let check it out!
+Notion develop, hacking resources</description>
+    </item>
+    
+  </channel>
+</rss>
