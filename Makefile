@@ -1,6 +1,8 @@
 # make report name=<name> - create a new report with the given name
 report:
-	hugo new reports/`date +'%Y%m%d-'$(name)`.md
+	name="`date +'%Y%m%d-'$(name)`";\
+	hugo new reports/$$name/index.md
+	mkdir -p $$name/img
 
 # make resource name=<name> - create a new resource with the given name
 resource:
