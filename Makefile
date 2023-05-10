@@ -12,7 +12,7 @@ run:
 	hugo server -b http://local.lowk.me
 
 # make add-tw name link
-add-tw: 
+tw: 
 	@([ -z "$(link)" ] || [ -z "$(name)" ]) \
 		&& echo "Usage: make add-tw name=<name> link=<link>" && exit 1 ;\
 	echo "" ;\
