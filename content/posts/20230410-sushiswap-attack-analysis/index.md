@@ -1,5 +1,5 @@
 ---
-title: "20230410 Sushiswap Attack Analysis"
+title: "Sushiswap Attack Analysis"
 date: 2023-04-10T09:27:17+07:00
 draft: false
 author: LowK

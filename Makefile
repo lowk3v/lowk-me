@@ -1,20 +1,27 @@
 # make report name=<name> - create a new report with the given name
-report:
+post:
 	name="`date +'%Y%m%d-'$(name)`";\
-	hugo new reports/$$name/index.md
+	hugo new posts/$$name/index.md
 	mkdir -p $$name/img
 
 # make resource name=<name> - create a new resource with the given name
 resource:
-	hugo new resource/`date +'%Y%m%d-'$(name)`.md
+	hugo new resources/`date +'%Y%m%d-'$(name)`.md
 
 run:
 	hugo server -b http://local.lowk.me
 
+# create a new portfolio
+port:
+	@([ -z "$(title)" ]) && echo "Usage: make port title=<title>" && exit 0 ; \
+	name=`date +'%Y%m%d'`-`echo $(title)|sed 's/[^a-zA-Z0-9]/-/g'`
+	hugo new portfolios/$$name/index.md ;\
+	&& echo "Portfolio created"
+
 # make add-tw name link
 tw: 
 	@([ -z "$(link)" ] || [ -z "$(name)" ]) \
-		&& echo "Usage: make add-tw name=<name> link=<link>" && exit 1 ;\
+		&& echo "Usage: make add-tw name=<name> link=<link>" && exit 0 ;\
 	echo "" ;\
 	name=`echo $(name)|sed 's/[^a-zA-Z0-9]/-/g'` ;\
 	nameFile="content/tweets/$$name.md" ;\

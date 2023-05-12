@@ -4,8 +4,9 @@ baseURL = 'https://lowk.me'
 name = "LowK"
 title = "LowK"
 
-theme = "chringel-hugo-theme"
+theme = ["chringel-hugo-theme", "hugo-embed-pdf-shortcode"]
 # https://github.com/chringel21/chringel-hugo-theme
+# https://github.com/anvithks/hugo-embed-pdf-shortcode
 
 languageCode = "en-us"
 license = "MIT"
@@ -20,6 +21,9 @@ enableEmoji = true
 disqusShortname = 'lowk'
 
 googleAnalytics = 'G-JDNP5HFPQ2'
+
+# pdf short code
+enableInlineShortcodes = true
 
 [author]
   name = "LowK"
