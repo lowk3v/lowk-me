@@ -1,4 +1,4 @@
-baseURL = 'https://lowk.me'
+baseURL = 'https://lowk.me/'
 #baseURL = 'localhost'
 
 name = "LowK"
