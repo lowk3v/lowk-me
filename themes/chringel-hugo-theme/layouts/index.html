@@ -54,6 +54,7 @@
     {{ if .Site.Params.recentpostsonindex | default true }}
       <div id="featured-post" class="h-8"></div>
       <div class="container mx-auto max-w-4xl">
+        
         <h2 class="text-center font-light text-3xl mt-5">Recent Posts</h2>
         <div
           class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"
@@ -61,11 +62,12 @@
         {{ partial "widgets/featured-post-card.html" . }}
 
 
-        <div class="grid md:grid-cols-2 gap-4">
-          {{ range first 2 (after 1 (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse) }}
+        <div class="grid md:grid-cols-1">
+          {{ range (after 1 (where .Site.RegularPages "Section" "posts").ByPublishDate.Reverse) }}
             {{ partial "widgets/post-card.html" . }}
           {{ end }}
         </div>
+
       </div>
     {{ end }}
   </article>
