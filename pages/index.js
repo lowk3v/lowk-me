@@ -184,7 +184,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💼</span>
-                  <a href="mail://lowk@gmail.com">Email</a>
+                  <a href="mail://lowk3v@gmail.com">Email</a>
                 </div>
                 <div className={styles.subtitle}>Mail to me for work purposes</div>
               </li>
