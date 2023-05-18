@@ -200,6 +200,14 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
+              
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>💌</span>
+                  <a href="https://lowk.substack.com/notes">Notes for my studies journey</a>
+                </div>
+              </li>
+
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>✏️</span>
