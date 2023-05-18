@@ -10,7 +10,6 @@ export default function Home(props) {
   const [showTip, setShowTip] = useState(false);
 
   useEffect(() => {
-    getStaticProps();
     setShowTip(true);
   }, []);
 
@@ -229,7 +228,7 @@ export default function Home(props) {
 
         <h2>Latest Updates 👇</h2>
         <div className={styles['issue-container']}>
-          {props.latest.map((issue, i) => (
+          {props.latest && props.latest.map((issue, i) => (
             <a key={i} href={issue.link} className={styles['issue-line']}>
               <div className={styles['issue-header']}>
                 <div
@@ -288,6 +287,7 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   try {
+    debugger
     const parser = new Parser();
     const [newsletter] =
       await Promise.all([
