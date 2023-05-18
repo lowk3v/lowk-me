@@ -10,6 +10,7 @@ export default function Home(props) {
   const [showTip, setShowTip] = useState(false);
 
   useEffect(() => {
+    getStaticProps();
     setShowTip(true);
   }, []);
 
