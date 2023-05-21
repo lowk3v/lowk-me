@@ -151,7 +151,7 @@ export default function Home(props) {
                 <span style={{ marginRight: '10px' }}>😻</span>
                 I like coding, security, blockchain.<br/>
                 I wanna become to <br/>
-                a tech successful entrepreneur
+                a successful tech entrepreneur
               </li>
             </ul>
           </section>
