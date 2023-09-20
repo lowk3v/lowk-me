@@ -129,7 +129,7 @@ export default function Home(props) {
         <div className={styles.sections}>
           <section>
             <h2>
-              <a href="https://lowk.substack.com/about" target="_blank">About Me</a>
+              <a href="https://lowk.substack.com/about" target="_blank">About Me ↗</a>
             </h2>
             <ul className={styles.list}>
               <li>
