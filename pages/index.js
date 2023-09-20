@@ -128,7 +128,9 @@ export default function Home(props) {
 
         <div className={styles.sections}>
           <section>
-            <h2>About Me</h2>
+            <h2>
+              <a href="https://lowk.substack.com/about" target="_blank">About Me</a>
+            </h2>
             <ul className={styles.list}>
               <li>
                 <span style={{ marginRight: '10px' }}>🇻🇳</span>
@@ -163,28 +165,28 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>🐦</span>
-                  <a href="https://twitter.com/Lowk3v_">Twitter</a>
+                  <a href="https://twitter.com/Lowk3v_" target="_blank">Twitter</a>
                 </div>
                 <div className={styles.subtitle}>{props.tweets}</div>
               </li>
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💼</span>
-                  <a href="https://www.linkedin.com/in/lowk3v/">LinkedIn</a>
+                  <a href="https://www.linkedin.com/in/lowk3v/" target="_blank">LinkedIn</a>
                 </div>
                 <div className={styles.subtitle}>I post every day</div>
               </li>
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💼</span>
-                  <a href="https://lowk3v.t.me/">Telegram</a>
+                  <a href="https://lowk3v.t.me/" target="_blank">Telegram</a>
                 </div>
                 <div className={styles.subtitle}>DM me for work purposes</div>
               </li>
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💼</span>
-                  <a href="mail://lowk3v@gmail.com">Email</a>
+                  <a href="mail://lowk3v@gmail.com" target="_blank">Email</a>
                 </div>
                 <div className={styles.subtitle}>Mail to me for work purposes</div>
               </li>
@@ -196,7 +198,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💌</span>
-                  <a href="https://lowk.substack.com/">Newsletter</a>
+                  <a href="https://lowk.substack.com/" target="_blank">Newsletter</a>
                 </div>
                 <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
@@ -204,14 +206,14 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💌</span>
-                  <a href="https://lowk.substack.com/notes">Notes for my studies journey</a>
+                  <a href="https://lowk.substack.com/notes" target="_blank">Notes for my studies journey</a>
                 </div>
               </li>
 
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>✏️</span>
-                  <a href="https://lowk3v.notion.site/fb7f4a24da3341f8b4792267c9911b95?v=fcc543b6a42d483ba364a13e6508db1f">
+                  <a href="https://lowk3v.notion.site/fb7f4a24da3341f8b4792267c9911b95?v=fcc543b6a42d483ba364a13e6508db1f" target="_blank">
                     Learning Hacking Smart Contracts
                   </a>
                 </div>
