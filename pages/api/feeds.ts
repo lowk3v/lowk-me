@@ -18,9 +18,10 @@ export default async function feeds(
 		const parser = new Parser();
 		const newsletter = await parser.parseURL('https://lowk.substack.com/feed');
 		res.status(200).json({
-			updatedAt: `Last issue: ${fromNow(
-				new Date(newsletter.items[0].pubDate)
-			)}`,
+			// updatedAt: `Last issue: ${fromNow(
+			// 	new Date(newsletter.items[0].pubDate)
+			// )}`,
+			// @ts-ignore
 			feeds: [
 				...newsletter.items.map((item: any) => ({
 				...item,
@@ -62,6 +63,7 @@ function fromNow(
 	];
 	const now =
 		typeof nowDate === 'object'
+		// @ts-ignore
 		? nowDate.getTime()
 		: new Date(nowDate).getTime();
 	const diff =
@@ -72,6 +74,7 @@ function fromNow(
 		const x = Math.round(Math.abs(diff) / interval.divisor);
 		const isFuture = diff < 0;
 		return interval.unit
+			// @ts-ignore
 			? rft.format(isFuture ? x : -x, interval.unit)
 			: interval.text;
 		}

@@ -3,6 +3,15 @@ import Link from "next/link";
 import styles from './styles/Home.module.css';
 import React, { useEffect, useState } from "react";
 
+interface IFeed {
+	title: string;
+	link: string;
+	isoDate: string;
+	contentSnippet: string;
+	source: string;
+	color: string;
+}
+
 const navigation = [
 	{ name: "Projects", href: "/projects" },
 	{ name: "About", href: "/about" },
@@ -136,26 +145,31 @@ export default function Home() {
 					<section className={styles.subSection}>
 						<h2 className={styles.heading}>Latest Post 👇</h2>
 						<div className={styles['issue-container']}>
-						{feeds && feeds.map((issue, i) => (
-							<a key={i} href={issue.link} className={styles['issue-line']}>
-							<div className={styles['issue-header']}>
-								<div
-								style={{ backgroundColor: issue.color }}
-								className={styles['issue-source']}
-								>
-								{issue.source}
-								</div>
-								<div className={styles['issue-date']}>
-								{/* {moment(issue.isoDate).fromNow()} */}
-								</div>
-							</div>
-							<div className={styles['issue-title']}>{issue.title}</div>
-							<div className={styles['issue-snippet']}>
-								{(issue.contentSnippet || '').substring(0, 100)}
-								{(issue.contentSnippet || '').length > 100 ? '...' : ''}
-							</div>
-							</a>
-						))}
+						{
+							feeds && feeds.map((issue, i) => {
+								const { title, link, isoDate, contentSnippet, source, color } = issue as IFeed;
+								return (
+									<a key={i} href={link} className={styles['issue-line']}>
+										<div className={styles['issue-header']}>
+											<div
+											style={{ backgroundColor: color }}
+											className={styles['issue-source']}
+											>
+											{source}
+											</div>
+											<div className={styles['issue-date']}>
+											{/* {moment(issue.isoDate).fromNow()} */}
+											</div>
+										</div>
+										<div className={styles['issue-title']}>{title}</div>
+										<div className={styles['issue-snippet']}>
+											{(contentSnippet || '').substring(0, 100)}
+											{(contentSnippet || '').length > 100 ? '...' : ''}
+										</div>
+									</a>
+								)
+							})
+						}
 						</div>
 					</section>
 				</div>

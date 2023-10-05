@@ -10,7 +10,10 @@ import { Eye } from "lucide-react";
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-	const views = {};
+	interface IView {
+		[slug: string]: number;
+	}
+	const views: IView = {};
 
 
 	const featured = allProjects.filter(
