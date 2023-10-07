@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
 	const views: IView = {};
 
 
-	const featured = allProjects.filter(
+		const featured = allProjects.filter(
 		(project) => project.featured && project.published)
 		.sort((a, b) =>
 			new Date(b.date ?? Number.POSITIVE_INFINITY).getTime()
@@ -39,7 +39,6 @@ export default async function ProjectsPage() {
 			new Date(b.date ?? Number.POSITIVE_INFINITY).getTime()
 			- new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
 		)!;		
-	console.log(underVrc.length)
 
 	return (
 		<div className="relative pb-16">
