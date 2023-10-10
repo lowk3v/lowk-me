@@ -70,7 +70,7 @@ export default function Home() {
 					{
 						link: 'mailto:lowk3v@gmail.com',
 						title: (
-							<span>Review Your Project
+							<span>Request an audit
 							<span style={{ marginLeft: 10 }}>🔐</span>
 							</span>
 						),

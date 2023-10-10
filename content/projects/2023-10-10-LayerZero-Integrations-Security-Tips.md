@@ -17,7 +17,7 @@ when integrating LayerZero into your smart contracts.
 
 ## Security Tips
 
-1. Calling `send()` with `{value: msg.value}` is because `send()` **requires a bit of native gas token** so the relayer can complete the message delivery on the destination chain. If you don't set this value [you might get this error](notion://www.notion.so/docs/evm-guides/error-messages/error-layerzero-relayer-fee-failed) when calling `endpoint.send()`
+1. Calling `send()` with `{value: msg.value}` is because `send()` **requires a bit of native gas token** so the relayer can complete the message delivery on the destination chain. If you don't set this value you might get an error when calling `endpoint.send()`
 
 2.  In a received chain, A **msg.sender is the LZ endpoint**. Are there any mistakes?
 
@@ -27,7 +27,7 @@ when integrating LayerZero into your smart contracts.
     
     Check the address size according to the source chain (e.g. address size == 20 bytes on EVM chains) to prevent a vector unauthenticated contract call.
     
-4.  In a received chain, parse srcAddress to the address type that is just applied for EVM chains. **Is your application connected with non-e chain?**
+4.  In a received chain, parse srcAddress to the address type that is just applied for EVM chains. **Is your application connected with non-evm chain?**
 
 5. **Is there a set of trusted remote addresses**? The feature is available at some places that must be checked:
     - retryPayload()::srcAddress
