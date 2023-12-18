@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align=center>Hydrogen Nextjs</h1>
+<p align=center>Hydrogen is a minimal & highly customizable free NextJs personal blog template ideal for creating personal blog website.</p>
+<h2 align="center"> <a target="_blank" href="https://hydrogen-nextjs.vercel.app/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fhydrogen-nextjs.vercel.app%2F&form_factor=desktop">Page Speed (100%)</a>
+</h2>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/43c4f6d6-87cb-4e10-863b-96e0b7d298b1/deploy-status)](https://app.netlify.com/sites/portfolio-nextjs-v2/deploys)
+<p align=center>
+  <a href="https://github.com/vercel/next.js/releases/tag/v13.0.6" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=NEXTJS&message=13.0&color=000&logo=nextjs" />
+  </a>
 
-## Getting Started
+  <a href="https://github.com/statichunt/hydrogen-nextjs/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/statichunt/hydrogen-nextjs" alt="license"></a>
 
-First, run the development server:
+  <img src="https://img.shields.io/github/languages/code-size/statichunt/hydrogen-nextjs" alt="code size">
 
-```bash
-npm run dev
-# or
-yarn dev
+  <a href="https://github.com/statichunt/hydrogen-nextjs/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/statichunt/hydrogen-nextjs" alt="contributors"></a>
+</p>
+
+![hydrogen](https://statichunt.com/themes/nextjs-hydrogen.png)
+
+## Key Features
+
+- Google Page Speed score 100! (Desktop)
+- Supports Contact Form
+- Disqus Comment Support 
+- Related Posts Suggestion 
+- MDX Support with many built-in custom components
+- Semantic HTML Document Structure
+- Custom Logo Support
+- Includes All SCSS Files
+- Taxonomy Page Support 
+- Images Optimized With Next/image
+
+<!-- installation -->
+## Installation
+
+After downloading the template, you have some prerequisites to install. Then you can run it on your localhost. You can view the package.json file to see which scripts are included.
+
+### Install prerequisites (once for a machine)
+
+- **Node Installation:** [Install node js](https://nodejs.org/en/download/) [Recommended LTS version]
+
+### Local setup
+
+After successfully installing those dependencies, open this template with any IDE [[VS Code](https://code.visualstudio.com/) recommended], and then open the internal terminal of IDM [vs code shortcut <code>ctrl/cmd+\`</code>]
+
+- Install dependencies
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Run locally
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+After that, it will open up a preview of the template in your default browser, watch for changes to source files, and live-reload the browser when changes are saved.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Production Build
 
-## Learn More
+After finishing all the customization, you can create a production build by running this command.
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- reporting issue -->
+## Reporting Issues
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/statichunt/hydrogen-nextjs/issues). It’s possible someone has already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/statichunt/hydrogen-nextjs/issues).
 
-## Deploy on Vercel
+<!-- licence -->
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Copyright (c) 2019 - Present, Designed & Developed by [statichunt](https://statichunt.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Code License:** Released under the [MIT](https://github.com/statichunt/hydrogen-nextjs/blob/main/LICENSE) license.
+
+**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.

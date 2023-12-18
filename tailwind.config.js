@@ -1,111 +1,75 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const theme = require("./config/theme.json");
+
+let font_base = Number(theme.fonts.font_size.base.replace("px", ""));
+let font_scale = Number(theme.fonts.font_size.scale);
+let h6 = font_base / font_base;
+let h5 = h6 * font_scale;
+let h4 = h5 * font_scale;
+let h3 = h4 * font_scale;
+let h2 = h3 * font_scale;
+let h1 = h2 * font_scale;
+let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
+if (theme.fonts.font_family.primary) {
+  fontPrimary = theme.fonts.font_family.primary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontPrimaryType = theme.fonts.font_family.primary_type;
+}
+if (theme.fonts.font_family.secondary) {
+  fontSecondary = theme.fonts.font_family.secondary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontSecondaryType = theme.fonts.font_family.secondary_type;
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		"./app/**/*.{js,ts,jsx,tsx}",
-		"./mdx-components.tsx",
-		"content/**/*.mdx",
-	],
-
-	theme: {
-		extend: {
-			typography: {
-				DEFAULT: {
-					css: {
-						"code::before": {
-							content: '""',
-						},
-						"code::after": {
-							content: '""',
-						},
-					},
-				},
-				quoteless: {
-					css: {
-						"blockquote p:first-of-type::before": { content: "none" },
-						"blockquote p:first-of-type::after": { content: "none" },
-					},
-				},
-			},
-			fontFamily: {
-				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-				display: ["var(--font-calsans)"],
-			},
-			backgroundImage: {
-				"gradient-radial":
-					"radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
-			},
-			animation: {
-				"fade-in": "fade-in 3s ease-in-out forwards",
-				title: "title 3s ease-out forwards",
-				"fade-left": "fade-left 3s ease-in-out forwards",
-				"fade-right": "fade-right 3s ease-in-out forwards",
-			},
-			keyframes: {
-				"fade-in": {
-					"0%": {
-						opacity: "0%",
-					},
-					"75%": {
-						opacity: "0%",
-					},
-					"100%": {
-						opacity: "100%",
-					},
-				},
-				"fade-left": {
-					"0%": {
-						transform: "translateX(100%)",
-						opacity: "0%",
-					},
-
-					"30%": {
-						transform: "translateX(0%)",
-						opacity: "100%",
-					},
-					"100%": {
-						opacity: "0%",
-					},
-				},
-				"fade-right": {
-					"0%": {
-						transform: "translateX(-100%)",
-						opacity: "0%",
-					},
-
-					"30%": {
-						transform: "translateX(0%)",
-						opacity: "100%",
-					},
-					"100%": {
-						opacity: "0%",
-					},
-				},
-				title: {
-					"0%": {
-						"line-height": "0%",
-						"letter-spacing": "0.25em",
-						opacity: "0",
-					},
-					"25%": {
-						"line-height": "0%",
-						opacity: "0%",
-					},
-					"80%": {
-						opacity: "100%",
-					},
-
-					"100%": {
-						"line-height": "100%",
-						opacity: "100%",
-					},
-				},
-			},
-		},
-	},
-	plugins: [
-		require("@tailwindcss/typography"),
-		require("tailwindcss-debug-screens"),
-	],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./content/**/*.{md,mdx}",
+  ],
+  theme: {
+    screens: {
+      sm: "540px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    container: {
+      center: true,
+      padding: "2rem",
+    },
+    extend: {
+      colors: {
+        text: theme.colors.default.text_color.default,
+        dark: theme.colors.default.text_color.dark,
+        primary: theme.colors.default.theme_color.primary,
+        body: theme.colors.default.theme_color.body,
+        border: theme.colors.default.theme_color.border,
+      },
+      fontSize: {
+        base: font_base + "px",
+        h1: h1 + "rem",
+        "h1-sm": h1 * 0.8 + "rem",
+        h2: h2 + "rem",
+        "h2-sm": h2 * 0.8 + "rem",
+        h3: h3 + "rem",
+        "h3-sm": h3 * 0.8 + "rem",
+        h4: h4 + "rem",
+        h5: h5 + "rem",
+        h6: h6 + "rem",
+      },
+      fontFamily: {
+        primary: [fontPrimary, fontPrimaryType],
+        secondary: [fontSecondary, fontSecondaryType],
+      },
+    },
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwind-bootstrap-grid")({ generateContainer: false }),
+  ],
 };
