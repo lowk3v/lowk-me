@@ -1,8 +1,9 @@
 name: 'Netlify Deploy'
 
 on:
-  release:
-    types: [v4]
+  push:
+    branches:
+      - v4
 
 jobs:
   deploy:
