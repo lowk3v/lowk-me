@@ -10,9 +10,11 @@ import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import {useEffect, useState} from "react";
 import Substack from "@components/Substack";
+import PostLink from "@components/Link";
+import {Loading} from "@components/loading";
 const { blog_folder } = config.settings;
 
-const Home = ({ posts }) => {
+const Home = ({ posts, links }) => {
   const { pagination } = config.settings;
   const { name, image, designation, bio } = config.profile;
   const sortPostByDate = sortByDate(posts);
@@ -65,7 +67,7 @@ const Home = ({ posts }) => {
           <div className="row">
             <div className="mx-auto lg:col-10">
               <div className="row">
-                {newsletters.slice(0, pagination).map((post, i) => (
+                { newsletters.length === 0 ? (<Loading />) : newsletters.slice(0, pagination).map((post, i) => (
                   <Substack
                     className="col-12 mb-6 sm:col-6"
                     key={"key-" + i}
@@ -76,6 +78,15 @@ const Home = ({ posts }) => {
               <div className="row">
                 {sortPostByDate.slice(0, pagination).map((post, i) => (
                   <Post
+                    className="col-12 mb-6 sm:col-6"
+                    key={"key-" + i}
+                    post={post}
+                  />
+                ))}
+              </div>
+              <div className="row">
+                {sortPostByDate.slice(0, pagination).map((post, i) => (
+                  <PostLink
                     className="col-12 mb-6 sm:col-6"
                     key={"key-" + i}
                     post={post}
@@ -101,9 +112,22 @@ export default Home;
 // for homepage data
 export const getStaticProps = async () => {
   const blogPosts = getSinglePage(`content/${blog_folder}`);
+
+  // get posts are contain category Github
+  const postLinks = blogPosts.filter((post) =>
+    post.frontmatter.categories.includes("github")
+  );
+
+  // normal posts
+  const genericPosts = blogPosts.filter((post) =>
+    !postLinks.includes(post)
+  );
+
+
   return {
     props: {
       posts: blogPosts,
+      links: postLinks,
     },
   };
 };
