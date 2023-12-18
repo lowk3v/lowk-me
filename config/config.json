@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "LowK - Indie Smart Contract Security Auditor",
+    "base_url": "/",
+    "favicon": "/images/avatar.png"
+  },
+  "settings": {
+    "pagination": 5,
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+  "profile": {
+    "name": "LowK",
+    "image": "/images/avatar.png",
+    "designation": "Smart Contract Security Auditor",
+    "bio": "Ex. Penetration Tester."
+  },
+  "params": {
+    "contact_form_action": "#",
+    "tag_manager_id": "",
+    "copyright": "Copyright © 2023"
+  },
+  "metadata": {
+    "meta_author": "LowK",
+    "meta_image": "",
+    "meta_description": "A Smart Contract Security Author based in Viet Nam. Ex Penetration Tester."
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "lowk3v",
+    "settings": { }
+  }
+}

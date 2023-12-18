@@ -8,11 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: 'Netlify Rebuild'
     steps:
-      - uses: jogeleit/http-request-action@v1
-        with:
-          url: 'https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_TOKEN }}'
-          method: 'POST'
-          customHeaders: '{"Content-Type": "application/json"}'
-          data: '{}'
+      - uses: actions/checkout@v2
+      - name: 'Netlify Rebuild'
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_TOKEN }}
+        shell: bash
