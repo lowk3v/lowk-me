@@ -11,7 +11,7 @@ const Post = ({ post, className }) => {
           {post.frontmatter.categories.map((category, index) => (
             <li key={index}>
               <Link
-                className="text-primary"
+                className="text-rose-600"
                 href={`/categories/${category.toLowerCase()}`}
               >
                 {category}

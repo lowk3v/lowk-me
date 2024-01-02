@@ -60,9 +60,9 @@ export const getStaticPaths = () => {
 export const getStaticProps = ({ params }) => {
   const posts = getSinglePage(`content/${blog_folder}`);
 
-  // get posts are contain category Github
+  // get posts are contain category Link
   let filteredPostLinks = []
-  if (params.category.toLowerCase() === 'github') {
+  if (params.category.toLowerCase() === 'Link') {
     filteredPostLinks = posts.filter((post) =>
       post.frontmatter.categories.find((category) =>
         slugify(category).includes(params.category)

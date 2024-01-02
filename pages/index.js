@@ -18,6 +18,7 @@ const Home = ({ posts, links }) => {
   const { pagination } = config.settings;
   const { name, image, designation, bio } = config.profile;
   const sortPostByDate = sortByDate(posts);
+  const sortPostLinkByDate = sortByDate(links);
   const [newsletters, setNewsletters] = useState([])
 
   useEffect(() => {
@@ -85,7 +86,7 @@ const Home = ({ posts, links }) => {
                 ))}
               </div>
               <div className="row">
-                {sortPostByDate.slice(0, pagination).map((post, i) => (
+                {sortPostLinkByDate.slice(0, pagination).map((post, i) => (
                   <PostLink
                     className="col-12 mb-6 sm:col-6"
                     key={"key-" + i}
@@ -113,9 +114,9 @@ export default Home;
 export const getStaticProps = async () => {
   const blogPosts = getSinglePage(`content/${blog_folder}`);
 
-  // get posts are contain category Github
+  // get posts are contain category Link
   const postLinks = blogPosts.filter((post) =>
-    post.frontmatter.categories.includes("github")
+    post.frontmatter.categories.includes("Link")
   );
 
   // normal posts
@@ -126,7 +127,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      posts: blogPosts,
+      posts: genericPosts,
       links: postLinks,
     },
   };
