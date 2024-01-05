@@ -58,9 +58,9 @@ const BlogPagination = ({ posts, currentPage, pagination }) => {
               } else if (post.frontmatter.categories.includes("Link")) {
                 // get posts are contain category Link
                 return (
-                  <Post
+                  <PostLink
                     className="col-12 mb-6 sm:col-6"
-                    key={"post-key-" + i}
+                    key={"postLink-key-" + i}
                     post={post}
                   />
                 );
@@ -74,9 +74,9 @@ const BlogPagination = ({ posts, currentPage, pagination }) => {
               )} else {
                 // normal posts
                 return (
-                  <PostLink
+                  <Post
                     className="col-12 mb-6 sm:col-6"
-                    key={"postLink-key-" + i}
+                    key={"post-key-" + i}
                     post={post}
                   />
                 );
