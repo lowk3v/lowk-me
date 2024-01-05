@@ -6,20 +6,20 @@ import Pagination from "@layouts/components/Pagination";
 import Post from "@layouts/components/Post";
 import Social from "@layouts/components/Social";
 import { getSinglePage } from "@lib/contentParser";
-import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import {useEffect, useState} from "react";
 import Substack from "@components/Substack";
 import PostLink from "@components/Link";
+import Report from "@components/Report";
 import {Loading} from "@components/loading";
 const { blog_folder } = config.settings;
 
-const Home = ({ posts, links }) => {
+const Home = ({ posts }) => {
   const { pagination } = config.settings;
   const { name, image, designation, bio } = config.profile;
-  const sortPostByDate = sortByDate(posts);
-  const sortPostLinkByDate = sortByDate(links);
-  const [newsletters, setNewsletters] = useState([])
+  const [ allPosts, setAllPosts ] = useState(posts)
+  const [ isFeeding, setIsFeeding ] = useState(true)
+  const [ totalPages, setTotalPages ] = useState(Math.ceil(allPosts.length / pagination))
 
   useEffect(() => {
     fetch("/api/feeds", {
@@ -29,10 +29,16 @@ const Home = ({ posts, links }) => {
       },
     }).then((res) => {
       res.json().then((data) => {
-        setNewsletters(data.feeds)
+        const sortedPosts = data.feeds.concat(allPosts).sort((a, b) => {
+          return new Date(b.pubDate ? b.pubDate : b.frontmatter.date)
+            - new Date(a.pubDate ? a.pubDate : a.frontmatter.date)
+        })
+        setAllPosts(sortedPosts)
+        setTotalPages(Math.ceil(sortedPosts.length / pagination))
+        setIsFeeding(false)
       })
     })
-  }, []);
+  }, [allPosts, pagination]);
 
   return (
     <Base>
@@ -68,37 +74,51 @@ const Home = ({ posts, links }) => {
           <div className="row">
             <div className="mx-auto lg:col-10">
               <div className="row">
-                { newsletters.length === 0 ? (<Loading />) : newsletters.slice(0, pagination).map((post, i) => (
-                  <Substack
-                    className="col-12 mb-6 sm:col-6"
-                    key={"key-" + i}
-                    post={post}
-                  />
-                ))}
+                { isFeeding ? (<Loading />) : ''}
               </div>
               <div className="row">
-                {sortPostByDate.slice(0, pagination).map((post, i) => (
-                  <Post
-                    className="col-12 mb-6 sm:col-6"
-                    key={"key-" + i}
-                    post={post}
-                  />
-                ))}
-              </div>
-              <div className="row">
-                {sortPostLinkByDate.slice(0, pagination).map((post, i) => (
-                  <PostLink
-                    className="col-12 mb-6 sm:col-6"
-                    key={"key-" + i}
-                    post={post}
-                  />
-                ))}
+                {allPosts.slice(0, pagination).map((post, i) => {
+                    if (post.source && post.source === 'Newsletter') {
+                      return (
+                        <Substack
+                          className="col-12 mb-6 sm:col-6"
+                          key={"key-" + i}
+                          post={post}
+                        />
+                      )
+                    } else if (post.frontmatter.categories.includes("Link")) {
+                      // get posts are contain category Link
+                      return (
+                        <Post
+                          className="col-12 mb-6 sm:col-6"
+                          key={"post-key-" + i}
+                          post={post}
+                        />
+                      );
+                    } else if (post.frontmatter.categories.includes("Report")) {
+                      return (
+                        <Report
+                          className="col-12 mb-6 sm:col-6"
+                          key={"post-key-" + i}
+                          post={post}
+                        />
+                    )}else {
+                      // normal posts
+                      return (
+                        <PostLink
+                          className="col-12 mb-6 sm:col-6"
+                          key={"postLink-key-" + i}
+                          post={post}
+                        />
+                      );
+                    }
+                })}
               </div>
             </div>
           </div>
           <div className="mt-12">
             <Pagination
-              totalPages={Math.ceil(posts.length / pagination)}
+              totalPages={totalPages}
               currentPage={1}
             />
           </div>
@@ -111,24 +131,8 @@ const Home = ({ posts, links }) => {
 export default Home;
 
 // for homepage data
-export const getStaticProps = async () => {
-  const blogPosts = getSinglePage(`content/${blog_folder}`);
-
-  // get posts are contain category Link
-  const postLinks = blogPosts.filter((post) =>
-    post.frontmatter.categories.includes("Link")
-  );
-
-  // normal posts
-  const genericPosts = blogPosts.filter((post) =>
-    !postLinks.includes(post)
-  );
-
-
-  return {
-    props: {
-      posts: genericPosts,
-      links: postLinks,
-    },
-  };
-};
+export const getStaticProps = async () => ({
+  props: {
+    posts: getSinglePage(`content/${blog_folder}`)
+  },
+})
