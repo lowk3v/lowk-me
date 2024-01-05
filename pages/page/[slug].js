@@ -36,7 +36,7 @@ const BlogPagination = ({ posts, currentPage, pagination }) => {
         setIsFeeding(false)
       })
     })
-  }, [allPosts, pagination, indexOfFirstPost, indexOfLastPost]);
+  }, []);
 
   return (
     <div className="section container">

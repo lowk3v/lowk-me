@@ -38,7 +38,7 @@ const Home = ({ posts }) => {
         setIsFeeding(false)
       })
     })
-  }, [allPosts, pagination]);
+  }, []);
 
   return (
     <Base>
