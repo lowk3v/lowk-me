@@ -1,7 +1,5 @@
-import config from "@config/config.json";
 import { dateFormat } from "@lib/utils/dateFormat";
 import Link from "next/link";
-const { blog_folder } = config.settings;
 
 const PostLink = ({ post, className }) => {
   return (
