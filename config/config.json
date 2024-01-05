@@ -5,7 +5,7 @@
     "favicon": "/images/avatar.png"
   },
   "settings": {
-    "pagination": 5,
+    "pagination": 6,
     "summary_length": 200,
     "blog_folder": "posts"
   },

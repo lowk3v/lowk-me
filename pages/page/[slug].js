@@ -25,7 +25,7 @@ const BlogPagination = ({ posts, currentPage, pagination }) => {
       },
     }).then((res) => {
       res.json().then((data) => {
-        const sortedPosts = data.feeds.concat(allPosts).sort((a, b) => {
+        const sortedPosts = data.feeds.concat(posts).sort((a, b) => {
           return new Date(b.pubDate ? b.pubDate : b.frontmatter.date)
             - new Date(a.pubDate ? a.pubDate : a.frontmatter.date)
         })
@@ -34,9 +34,10 @@ const BlogPagination = ({ posts, currentPage, pagination }) => {
         )
         setTotalPages(Math.ceil(sortedPosts.length / pagination))
         setIsFeeding(false)
+        console.log(sortedPosts.slice(indexOfFirstPost, indexOfLastPost))
       })
     })
-  }, []);
+  }, [currentPage, posts]);
 
   return (
     <div className="section container">
